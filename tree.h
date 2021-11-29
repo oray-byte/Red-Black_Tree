@@ -6,6 +6,10 @@
 #ifndef TREE_H
 #define TREE_H
 
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 struct RB_Node
 {
@@ -18,7 +22,7 @@ struct RB_Node
 	* RB_Node* rChild -> A pointer to the RB_Node's right child.
 	*/
 public:
-	RB_Node(int data, bool color);
+	RB_Node(int data, bool color, RB_Node* parent, RB_Node* lChild, RB_Node* rChild);
 
 	int data;
 	bool color;
@@ -38,7 +42,10 @@ public:
 	void print();
 	bool find(int data);
 private:
-	void balance();
+	void insertHelper(RB_Node* rt, int data);
+	bool findHelper(RB_Node* rt, int data);
+	void printHelper(RB_Node* rt, int space);
+	void balance(RB_Node* rt);
 	RB_Node* root;
 	RB_Node* currentNode;
 };

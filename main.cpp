@@ -4,17 +4,12 @@
 */
 
 #include <iostream>
-#include <windows.h>
 
 using namespace std;
 
 int main()
 {
-	/*
-	system("Color F4");
-
-	cout << "34" << endl;
-	*/
+	
 
 	return 0;
 }
